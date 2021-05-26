@@ -1,0 +1,11 @@
+---
+application:
+  name: "etestzone"
+  project: "etestzone"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-etestzone"
+  routes:
+  - application_name: "etestzone"
+    paths:
+    - "/*"
