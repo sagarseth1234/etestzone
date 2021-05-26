@@ -1,0 +1,272 @@
+<%- include('partials/header') %>
+
+
+
+
+    <div id="myimage" style="display: none;" class="container">
+        <form action="/my_create_image" method="POST" enctype="multipart/form-data">
+
+            <input type="hidden" name="tname" value="<%= testname %>">
+            <input type="hidden" name="test_series" value="<%= tsname %>">
+
+
+            <% var x=no+1; %>
+                <h3>question
+                    <%= x %>
+                </h3>
+
+                <input type="file" name="image" multiple>
+                <br><br><br>
+
+                <input type="text" placeholder="a" name="a" required> <input type="radio" name="A" value="a" required> <br>
+                <br> <input type="text" placeholder="b" name="b" required> <input type="radio" name="A" value="b" required> <br>
+                <br> <input type="text" placeholder="c" name="c" required> <input type="radio" name="A" value="c" required> <br>
+                <br> <input type="text" placeholder="d" name="d" required> <input type="radio" name="A" value="d" required> <br>
+                <br> <label for="answer">please choose the correct answer </label>
+                <br> <button type="submit">next</button><br><br><br>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="myDIV" style="display: none;" class="container">
+        <form id="submit" action="/my_create" method="POST">
+
+            <input type="hidden" name="tname" value="<%= testname %>">
+            <input type="hidden" name="test_series" value="<%= tsname %>">
+
+
+            <% var x=no+1; %>
+                <h3>question
+                    <%= x %>
+                </h3>
+
+                <textarea name="Q" form="submit" class="text-center" placeholder="question no <%= x %>" cols="50%" rows="6" required></textarea>
+                <br><br><br>
+
+                <input type="text" placeholder="a" name="a" required> <input type="radio" name="A" value="a" required> <br>
+                <br> <input type="text" placeholder="b" name="b" required> <input type="radio" name="A" value="b" required> <br>
+                <br> <input type="text" placeholder="c" name="c" required> <input type="radio" name="A" value="c" required> <br>
+                <br> <input type="text" placeholder="d" name="d" required> <input type="radio" name="A" value="d" required> <br>
+                <br> <label for="answer">please choose the correct answer </label>
+                <br> <button type="submit">next</button><br><br><br>
+        </form>
+
+    </div>
+
+
+
+    <div class="card-header">
+        <h3 style="font-weight: 300;">Test :
+            <%= testname %>
+        </h3 style="font-weight: 300;">
+
+        <h5 style="font-weight: 300;">Marks per question:
+            <%= pmark %>
+        </h5>
+        <h5 style="font-weight: 300;">Negative Marks per question:
+            <%= nmark  %>
+        </h5>
+        <h5 style="font-weight: 300;">Total marks:
+            <%= tmark %>
+        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 style="font-weight: 300;">Time:
+                    <%= time %>
+                </h5>
+            </div>
+            <div style="padding-left: 30%;" class="col-6">
+                <button id="add" class="btn btn-dark">write question</button>
+                <button style="margin: 10px;" id="addimage" class="btn btn-dark">Add ques and answer</button>
+            </div>
+        </div>
+
+
+    </div>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card-footer">
+        <% for(var i=0;i< no;i++){ %>
+
+            <% var qno=i+1; %>
+                <h6> Q
+                    <%= qno  %> )
+                        <% var thisq = questions[i].question; %>
+                            <% var myqn =thisq.substr(0,4); %>
+
+                                <% if(myqn == 'http'){ %>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <img class="simple" src="<%= questions[i].question  %>" alt="img">
+                                        </div>
+                                        <div class="col-4">
+                                            <form action="/my_delete" method="POST">
+                                                <input type="hidden" name="qno" value="<%= qno  %>">
+                                                <input type="hidden" name="tname" value="<%= testname %>">
+                                                <input type="hidden" name="test_series" value="<%= tsname %>">
+                                                <button type="submit" class="btn btn-dark">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <% var naam= 'answer'+i; %>
+
+                                        <br>
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <input type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                                <label> <%= questions[i].a %> </label><br>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                                <label> <%= questions[i].b %>  </label><br>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                                <label> <%= questions[i].c %> </label><br>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                                <label> <%= questions[i].d %> </label><br>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                        <% }else{ %>
+                                            <%= questions[i].question  %> <br> <br>
+
+
+
+
+                                                <% var naam= 'answer'+i; %>
+
+                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                                    <label> <%= questions[i].a %> </label><br>
+                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                                    <label> <%= questions[i].b %>  </label><br>
+                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                                    <label> <%= questions[i].c %> </label><br>
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                                            <label> <%= questions[i].d %> </label><br>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <form action="/my_delete" method="POST">
+                                                                <input type="hidden" name="qno" value="<%= qno  %>">
+                                                                <input type="hidden" name="tname" value="<%= testname %>">
+                                                                <input type="hidden" name="test_series" value="<%= tsname %>">
+                                                                <button type="submit" class="btn btn-dark">Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+
+                </h6>
+
+
+
+
+                <script>
+                    function <%= naam %> () {
+
+                        var buttons = document.querySelectorAll('.<%= naam %>');
+
+                        for (var i = 0; i < buttons.length; i++) {
+                            buttons[i].checked = false;
+                        }
+                    }
+                </script>
+
+
+                <hr>
+                <% } %>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin:1rem 1rem;" class="row">
+        <div class="col-4">
+            <a href="/my_page"> <button class="btn btn-dark">Submit </button> </a>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("teacher").onclick = function() {
+            alert('You cannot give test as you are Teacher');
+        }
+    </script>
+    <script>
+        document.getElementById("add").onclick = function() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+        }
+
+        document.getElementById("addimage").onclick = function() {
+            var x = document.getElementById("myimage");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+        }
+    </script>
+
+
+
+
+    <%- include('partials/footer') %>

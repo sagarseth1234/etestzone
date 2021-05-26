@@ -1,0 +1,225 @@
+<%- include('partials/header') %>
+
+
+
+
+    <div class="card-header">
+        <div id='content-desktop'>
+            <div class="row">
+                <div class="col-6">
+                    <h2 style="font-weight: 300;">Name:
+                        <%= username  %>
+                    </h2>
+                </div>
+                <div class="col-6">
+                    <h2> Total Marks :
+                        <span id="total_marks">0</span>
+                    </h2>
+                </div>
+            </div>
+
+            <h2 style="font-weight: 300;">Test ID:
+                <%= name  %>
+            </h2>
+            <h2 style="font-weight: 300;">Date:
+                <%= date  %>
+            </h2>
+        </div>
+
+        <div id='content-mobile'>
+
+            <div class="row">
+                <div class="col-6">
+                    <h6 style="font-weight: 300;">Name:
+                        <%= username  %>
+                    </h6>
+                </div>
+                <div class="col-6">
+                    <h6> Total Marks :
+                        <span id="total_marks">0</span>
+                    </h6>
+                </div>
+            </div>
+
+            <h6 style="font-weight: 300;">Test ID:
+                <%= name  %>
+            </h6>
+            <h6 style="font-weight: 300;">Date:
+                <%= date  %>
+            </h6>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-12" style="margin-bottom: 6rem;">
+
+
+            <div class="jumbotron" style="border-style: groove;">
+                <form id="myform" action="/std_ts_result" method="POST" onsubmit="return confirm('Do you really want to submit');">
+
+                    <% for(var i=0;i<no;i++){ %>
+                        <div id="<%= i+1 %>" style="display: none;">
+                            <% var qno=i+1; %>
+
+                                <h4 class="check" style="color: #fa1400
+                                ;"></h4>
+                                <h6> Q
+                                    <%= qno  %> )
+                                        <%= questions[i][0].question  %>
+                                </h6>
+
+                                <% var naam= 'answer'+i; %>
+
+
+                                    <!-- java script-->
+
+                                    <script>
+                                        var correct = 0;
+                                        var wrong = 0;
+                                        $(document).ready(function() {
+                                            var pcount = 0;
+                                            var ncount = 0;
+                                            <%  var qnav = 's' + (i + 1); %>
+                                            if ('<%= questions[i][0].ans %>' == '<%= result[i].value %>') {
+                                                document.getElementsByClassName('<%= result[i].value %>')[<%= i %>].setAttribute("style", "background-color:#84fa84;");
+                                                document.getElementsByClassName('check')[<%= i %>].innerHTML = 'Correct';
+                                                document.getElementById('<%= qnav %>').setAttribute("style", "background-color:#84fa84");
+                                                var now = parseInt(document.getElementById("total_marks").innerHTML);
+                                                document.getElementById("total_marks").innerHTML = now + <%= pmark %>;
+                                                correct = correct + 1;
+                                            } else if ('<%= result[i].value %>' == 'null') {
+                                                document.getElementsByClassName('<%= questions[i][0].ans %>')[<%= i %>].setAttribute("style", "background-color:#84fa84;");
+                                                document.getElementsByClassName('check')[<%= i %>].innerHTML = 'Not Attempted';
+                                            } else {
+                                                document.getElementsByClassName('<%= questions[i][0].ans %>')[<%= i %>].setAttribute("style", "background-color:#84fa84;");
+                                                document.getElementsByClassName('<%= result[i].value %>')[<%= i %>].setAttribute("style", "background-color:	 #ff5b4d;");
+                                                document.getElementsByClassName('check')[<%= i %>].innerHTML = 'Wrong';
+                                                document.getElementById('<%= qnav %>').setAttribute("style", "background-color:	 #ff5b4d");
+                                                wrong++;
+                                            }
+                                        });
+                                    </script>
+
+
+
+                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                    <label class="a"> <%= questions[i][0].a %> </label><br>
+                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                    <label class="b"> <%= questions[i][0].b %>  </label><br>
+                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                    <label class="c"> <%= questions[i][0].c %> </label><br>
+                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                    <label class="d"> <%= questions[i][0].d %> </label><br>
+                        </div>
+                        <% } %>
+                </form>
+            </div>
+
+
+
+            <div style="text-align: right;">
+                <button onclick="erase()">Clear</button>
+                <button onclick="previous()">Previous</button>
+                <button onclick="next()">Next</button>
+                <button onclick="color()">Save & Next</button>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-12">
+            <div style="padding: 20px;">
+                <%    for(var c=1;c <= no;c++){ %>
+                    <% var ids= 's'+c; %>
+                        <button class="quest_nav" id="<%= ids %>" name="key" value="<%= c %>" onclick="show_question(this.id)">
+                <p>
+                    <%= c %>
+                </p>
+            </button>
+                        <%  } %>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var q = 1;
+
+        function show() {
+            var x = document.getElementById(q);
+            //alert(q);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            color();
+        }
+        show();
+
+
+
+        //show question
+        function show_question(clicked_id) {
+            var key = document.getElementById(clicked_id).value;
+            show();
+            q = key;
+            show();
+        }
+
+
+        //previous
+        function previous() {
+            if (q > 1) {
+                show();
+                q = q - 1;
+                show();
+            }
+        }
+
+        //next
+        function next() {
+            if (q < <%= no %>) {
+                show();
+                //color();
+                q = parseInt(q) + 1;
+                show();
+            }
+        }
+
+        //clear
+        function erase() {
+            var myclass = "answer" + (q - 1);
+            var but = 's' + q;
+            var buttons = document.querySelectorAll('.' + myclass);
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].checked = false;
+                //document.getElementById(but).style.backgroundColor = "white";
+            }
+        }
+
+        //color the button
+        function color() {
+            //not attempted
+            var mark;
+            var myclass = "answer" + (q - 1);
+            var buttons = document.querySelectorAll('.' + myclass);
+            for (var a = 0; a < buttons.length; a++) {
+
+                var ans = buttons[a].checked;
+                if (ans == true) {
+                    mark = 1;
+                    var but = 's' + q;
+                    document.getElementById(but).style.backgroundColor = "green";
+                    break;
+                } else {
+                    mark = 0;
+                }
+            }
+        }
+    </script>
+
+
+
+    <%- include('partials/footer') %>

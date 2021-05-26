@@ -1,0 +1,88 @@
+<%- include('partials/header') %>
+
+    <script>
+        window.onload = function() {
+            if (<%= visit %> == 1) {
+                alert('Test series with the name already exist,please change the test series name');
+            }
+        };
+    </script>
+
+
+    <div class="jumbotron" style="margin-bottom: 0px;">
+        <div class="container">
+            <div class="">
+                <h1 id="yes" style="text-align: center;font-size:310%;">Create Test</h1>
+                <br>
+                <hr><br>
+                <form action="/mytest_info" method="POST" target="wow">
+
+                    <h5>Enter Domain</h5>
+                    <select name="domain" placeholder='day'> 
+                           <option value='jee'> JEE </option>
+                           <option value="neet">NEET</option>
+                           <option value="nda">NDA</option>
+                           <option value="bank">Bank</option>
+                           <option value="cds">CDS</option>
+                           <option value="afcat">AFCAT</option>
+                           <option value="inet">INET</option>
+                           <option value="railway">Railway</option>
+                           <option value="defence">Army GD</option>
+                           <option value="defence">Police</option>
+                    </select><br><br>
+
+
+                    <h5>Enter the name of your Test Series:</h5>
+                    <input type="text" name="tsname" placeholder="Test series name" required>
+                    <br>
+                    <br>
+
+                    <h5>Enter the name of the Test:</h5>
+                    <input type="text" name="tname" placeholder="Test name" required>
+                    <br>
+                    <br>
+
+
+
+                    <h5>Marks for per correct answer</h5>
+                    <input type="number" step="0.01" name="mark" min="0" placeholder="marks per correct answer" required><br>
+                    <br>
+                    <h5>Negative marking of per wrong answer</h5>
+                    <input type="number" step="0.01" name="nmark" placeholder="negative marks per wrong answer" required><br>
+
+
+                    <br>
+
+                    <h4>Enter Total marks:</h4>
+                    <input type="number" step="0.01" name="tmarks" placeholder="Total Marks" min="0" required><br>
+
+                    <br>
+                    <h4>Time</h4>
+                    <p>In minutes</p>
+                    <input type="number" name="time" placeholder="Time" min="0" required>
+
+
+
+                    <br><br>
+
+                    <h4>Total Questions in One TEST:</h4>
+                    <input type="number" step="0.01" name="qno" placeholder="Questions per test" min="0" required><br>
+
+
+
+                    <br><br>
+
+                    <h4>Amount:</h4>
+                    <input type="number" step="0.01" name="amount" placeholder="Amount" min="0" required><br>
+
+
+                    <hr>
+
+
+                    <br>
+                    <button class="btn btn-dark" type="submit">  Proceed..  </button>
+                    <br><br><br><br>
+                </form>
+            </div>
+        </div>
+    </div>

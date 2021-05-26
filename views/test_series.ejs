@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+
+
+
+    <div id="mdiv" style="display: none;" class="container">
+
+        <form action="/add_test" method="POST">
+
+            <input type="hidden" name="test_series" value="<%= test_series %>">
+            <input type="hidden" name="domain" value="<%= domain %>">
+            <input type="text" name="tname" placeholder="Enter Test Name" required><br><br>
+            <button type="submit" class="btn btn-dark">Create</button>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-3">
+            <button style="margin-left: 60%;margin-top: 30px;" id="add" class="btn btn-dark">Add Test</button>
+        </div>
+        <div class="col-4">
+            <iframe name="publish" style="width: 0px; height: 0px; padding-top: 0px;"></iframe>
+            <form target="publish" action="/publish_ts" method="POST" onsubmit="return confirm('Do you really want to Pulish this test series');">
+                <span style="margin-left: 10%;font-size: 22px;"> Publish Test Series</span><br>
+                <select name="completed" style="margin-left: 13%;">
+                    <option value="yes">YES</option>
+                    <option value="no">NO</option>
+                </select>
+
+                <input type="hidden" name="ts_id" value="<%= ts_id %>">
+                <button type="submit">publish</button>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <% tests.forEach(test=>{ %>
+
+        <form action="my_tests" method="POST">
+            <input type="hidden" name="test_series" value="<%= test_series %>">
+            <input type="hidden" name="test" value="<%= test.tname %>">
+            <button class="btn" type="submit"><%= test.tname %> </button>
+        </form>
+
+        <% }) %>
+
+
+
+
+
+
+
+            <script>
+                document.getElementById("add").onclick = function() {
+                    var x = document.getElementById("mdiv");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+
+                }
+            </script>
+
+
+
+            <%- include('partials/footer') %>

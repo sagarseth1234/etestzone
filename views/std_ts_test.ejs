@@ -1,0 +1,302 @@
+<%- include('partials/header') %>
+
+
+
+    <script>
+        var x;
+
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+
+            var id = setInterval(clock, 1000);
+
+            function clock() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer == 0) {
+                    // timer = duration;
+                    document.getElementsByTagName('form')[0].submit();
+                    clearInterval(id);
+                    x = 0;
+                    alert('the paper is submited,please login again to see your result');
+                    return;
+                }
+            }
+        }
+
+
+        window.onload = function() {
+            x = <%= time %>;
+            var Minutes = 60 * x,
+                display = document.querySelector('#time');
+            startTimer(Minutes, display);
+        };
+    </script>
+
+
+
+
+
+
+
+    <div class="card-header nav-header" style="padding: 0px;">
+        <div class="logo-title" style="background-image: url(/images/header-bg.jpg);padding: 10px;padding-bottom: 0px;">
+            <div class="row">
+                <div class="col-6">
+                    <h3 style="font-weight: 300;">Test :
+                        <%= testname %>
+                    </h3 style="font-weight: 300;">
+                    <h5 style="font-weight: 300;">Marks per question:
+                        <%= pmarks %>
+                    </h5>
+                </div>
+                <div class="col-6" style="text-align: center;">
+                    <h1> <span id="time">   </span> </h1>Minutes
+                </div>
+            </div>
+
+            <h5 style="font-weight: 300;">Negative Marks per question:
+                <%= nmark  %>
+            </h5>
+            <h5 style="font-weight: 300;">Total marks:
+                <%= tmark %>
+            </h5>
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h5 style="font-weight: 300;">Time:
+                        <%= time %>
+                    </h5>
+                </div>
+                <div class="col-6" style="text-align: right; ">
+                    <a href="/std_page"> <button class="btn-sm button primary large" style="margin-right: 5px;margin-top: 5px;">Close</button></a>
+                    <button style="margin-right: 10%;margin-top: 5px;" type="submit" form="myform" class=" btn-sm button primary large ">Submit Test</button>
+                </div>
+            </div>
+        </div>
+        <img src="/images/wood.png" height="20px" width="100%" style="padding: 0px;margin: 0px;" alt="">
+    </div>
+    <div class="row" style="width: 100%;">
+        <div class="col-md-8 col-12" style="margin-bottom: 6rem;">
+
+
+            <div class="jumbotron" style="border-style: groove; background-color: white;margin-left: 1rem;">
+                <form id="myform" action="/std_ts_result" method="POST" onsubmit="return confirm('Do you really want to submit');">
+                    <input type="hidden" name="domain" value="<%= domain %>">
+                    <input type="hidden" name="ts" value="<%= //found.tsname %>">
+                    <input type="hidden" name="tname" value="<%= testname %>">
+                    <input type="hidden" name="qno" value="<%= no %>">
+                    <input type="hidden" name="key" value="<%= key %>">
+                    <input type="hidden" name="ts_id" value="<%= _id %>">
+
+                    <% for(var i=0;i<no;i++){ %>
+                        <div id="<%= i+1 %>" style="display: none;">
+                            <% var qno=i+1; %>
+                                <h6> Q
+                                    <%= qno  %> )
+                                </h6>
+                                <div style="margin-left: 30px;">
+                                    <% var thisq = questions[i].question; %>
+                                        <% var myqn =thisq.substr(0,4); %>
+
+                                            <% if(myqn == 'http'){ %>
+                                                <img style="width: 70%;height: auto;" class="simple" src="<%= questions[i].question  %>" alt="img">
+
+                                                <br>
+                                                <hr>
+                                                <div class="row" style="margin-left: 1%;margin-right: 1%;">
+                                                    <% var naam= 'answer'+i; %>
+                                                        <% var check = questions[i].a %>
+                                                            <% if(check.length < 3){ %>
+                                                                <div class="col-3">
+                                                                    <input style="background-color: black;" type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                                                    <label style="width: 80%;"> <%= questions[i].a %> </label><br>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                                                    <label style="width: 80%;"> <%= questions[i].b %>  </label><br>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                                                    <label style="width: 80%;"> <%= questions[i].c %> </label><br>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                                                    <label style="width: 10%;"> <%= questions[i].d %> </label><br>
+                                                                </div>
+                                                                <% }else{ %>
+
+                                                                    <div style="margin-left: 30px;">
+                                                                        <input type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                                                        <label> <%= questions[i].a %> </label><br>
+                                                                        <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                                                        <label> <%= questions[i].b %>  </label><br>
+                                                                        <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                                                        <label> <%= questions[i].c %> </label><br>
+                                                                        <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                                                        <label> <%= questions[i].d %> </label><br>
+                                                                    </div>
+
+                                                                    <% } %>
+                                                </div>
+                                                <hr>
+                                                <% }else{ %>
+                                                    <h6>
+                                                        <%= questions[i].question  %>
+                                                    </h6>
+
+                                                    <% var naam= 'answer'+i; %>
+
+                                                        <div style="margin-left: 30px;">
+                                                            <input type="radio" class="<%= naam %>" name="<%= naam %>" value="a">
+                                                            <label> <%= questions[i].a %> </label><br>
+                                                            <input type="radio" class="<%= naam %>" name="<%= naam %>" value="b">
+                                                            <label> <%= questions[i].b %>  </label><br>
+                                                            <input type="radio" class="<%= naam %>" name="<%= naam %>" value="c">
+                                                            <label> <%= questions[i].c %> </label><br>
+                                                            <input type="radio" class="<%= naam %>" name="<%= naam %>" value="d">
+                                                            <label> <%= questions[i].d %> </label><br>
+                                                        </div>
+
+
+                                                        <% } %>
+                                </div>
+
+
+
+                        </div>
+                        <% } %>
+                </form>
+            </div>
+
+
+
+            <div style="display: flex; float: right;">
+                <button class="btn btn-sm-block btn-default" style="margin-right: 10px;border: groove;" onclick="erase()">Clear</button>
+                <button class="btn btn-sm-block btn-warning" style="margin-right: 10px;" onclick="previous()">Previous</button>
+                <button class="btn btn-sm-block btn-success" style="margin-right: 10px;" onclick="next()">Next</button>
+                <button class="btn btn-sm-block btn-primary" style="margin-right: 10px;" onclick="mark()">Mark & Next</button>
+            </div>
+        </div>
+
+
+        <div class="jumbotron col-md-4 col-12" style="border: groove;">
+            <div style="padding: 20px;">
+                <%    for(var c=1;c <= no;c++){ %>
+                    <% var ids= 's'+c; %>
+                        <a href="#<%= c %>">
+                        <button class="quest_nav" id="<%= ids %>" name="key" value="<%= c %>" onclick="show_question(this.id)">
+                    <p>
+                        <%= c %>
+                    </p>
+                </button>
+                </a>
+                        <%  } %>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var q = 1;
+        var purple = 0;
+
+        function show() {
+            var x = document.getElementById(q);
+            //alert(q);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            color();
+        }
+        show();
+
+
+
+        //show question
+        function show_question(clicked_id) {
+            var key = document.getElementById(clicked_id).value;
+            show();
+            q = key;
+            show();
+        }
+
+
+        //previous
+        function previous() {
+            if (q > 1) {
+                show();
+                q = q - 1;
+                show();
+            }
+        }
+
+        //next
+        function next() {
+            if (q < <%= no %>) {
+                show();
+                //color();
+                q = parseInt(q) + 1;
+                show();
+            }
+        }
+
+        //clear
+        function erase() {
+            var myclass = "answer" + (q - 1);
+            var but = 's' + q;
+            var buttons = document.querySelectorAll('.' + myclass);
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].checked = false;
+                document.getElementById(but).style.backgroundColor = "white";
+            }
+        }
+
+        //color the button
+        function color() {
+            //not attempted
+            var mark;
+            var myclass = "answer" + (q - 1);
+            var buttons = document.querySelectorAll('.' + myclass);
+            for (var a = 0; a < buttons.length; a++) {
+                var ans = buttons[a].checked;
+                if (ans == true) {
+                    mark = 1;
+                    var but = 's' + q;
+                    if (purple == 0) {
+                        document.getElementById(but).style.backgroundColor = "#99FF33";
+                    } else {
+                        document.getElementById(but).style.backgroundColor = "#9900CC";
+                    }
+                    purple = 0;
+                    break;
+                } else {
+                    mark = 0;
+                }
+            }
+        }
+
+
+        //mark and next
+        function mark() {
+            purple = 1;
+            next();
+        }
+    </script>
+
+
+
+    <%- include('partials/footer') %>

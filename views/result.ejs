@@ -1,0 +1,176 @@
+<%- include('partials/header') %>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 style="font-weight: 300;">Name:
+                <%= username  %>
+            </h2>
+            <h2 style="font-weight: 300;">Test ID:
+                <%= name  %>
+            </h2>
+            <h2 style="font-weight: 300;">Date:
+                <%= date  %>
+            </h2>
+        </div>
+
+        <div class="card-body">
+            <% var right=0; %>
+                <% var wrong=0; %>
+                    <% var unattempted=0; %>
+
+
+                        <% for(var i=0;i< no;i++){ %>
+                            <hr>
+                            <% var qno=i+1; %>
+                                <h6> Q
+                                    <%= qno  %> )
+                                        <%= question[i][0].question  %>
+                                </h6>
+
+                                <% var naam= 'answer'+i; %>
+
+
+
+
+
+                                    <!--for unatempted answers-->
+
+
+                                    <% if(mark[i].value==null){ %>
+
+                                        <% unattempted++; %>
+                                            <% if(question[i][0].ans=='a'){ %>
+                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                <label for="option 1"> <%= question[i][0].a %> </label><br>
+                                                <% } %>
+
+                                                    <% if(question[i][0].ans=='b'){ %>
+                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                        <label for="option 1"> <%= question[i][0].b %> </label><br>
+                                                        <% } %>
+
+                                                            <% if(question[i][0].ans=='c'){ %>
+                                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                <label for="option 1"> <%= question[i][0].c %> </label><br>
+                                                                <% } %>
+
+                                                                    <% if(question[i][0].ans=='d'){ %>
+                                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                        <label for="option 1"> <%= question[i][0].d %> </label><br>
+                                                                        <% } %>
+
+                                                                            <% } %>
+
+
+
+
+
+
+                                                                                <!-- corect answers-->
+
+
+                                                                                <% if(mark[i].value==question[i][0].ans){ %>
+                                                                                    <% right++; %>
+                                                                                        <% if(question[i][0].ans=='a'){ %>
+                                                                                            <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                            <label class="correct" for="option 1"> <%= question[i][0].a %> </label><br>
+                                                                                            <% } %>
+
+                                                                                                <% if(question[i][0].ans=='b'){ %>
+                                                                                                    <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                    <label class="correct" for="option 1"> <%= question[i][0].b %> </label><br>
+                                                                                                    <% } %>
+
+                                                                                                        <% if(question[i][0].ans=='c'){ %>
+                                                                                                            <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                            <label class="correct" for="option 1"> <%= question[i][0].c %> </label><br>
+                                                                                                            <% } %>
+
+                                                                                                                <% if(question[i][0].ans=='d'){ %>
+                                                                                                                    <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                    <label class="correct" for="option 1"> <%= question[i][0].d %> </label><br>
+                                                                                                                    <% } %>
+
+
+
+                                                                                                                        <% } %>
+
+
+
+                                                                                                                            <!--wrong answers-->
+
+                                                                                                                            <% if((mark[i].value!=question[i][0].ans)&&(mark[i].value!=null)){ %>
+
+                                                                                                                                <% wrong++; %>
+                                                                                                                                    <!-- wrong option -->
+
+                                                                                                                                    <% if(mark[i].value=='a'){ %>
+                                                                                                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                        <label class="wrong" for="option 1"> <%= question[i][0].a %> </label><br>
+                                                                                                                                        <% } %>
+
+                                                                                                                                            <% if(mark[i].value=='b'){ %>
+                                                                                                                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                <label class="wrong" for="option 1"> <%= question[i][0].b %> </label><br>
+                                                                                                                                                <% } %>
+
+                                                                                                                                                    <% if(mark[i].value=='c'){ %>
+                                                                                                                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                        <label class="wrong" for="option 1"> <%= question[i][0].c %> </label><br>
+                                                                                                                                                        <% } %>
+
+                                                                                                                                                            <% if(mark[i].value=='d'){ %>
+                                                                                                                                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                                <label class="wrong" for="option 1"> <%= question[i][0].d %> </label><br>
+                                                                                                                                                                <% } %>
+
+                                                                                                                                                                    <!--right options-->
+
+                                                                                                                                                                    <% if(question[i][0].ans=='a'){ %>
+                                                                                                                                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                                        <label class="correct" for="option 1"> <%= question[i][0].a %> </label><br>
+                                                                                                                                                                        <% } %>
+
+                                                                                                                                                                            <% if(question[i][0].ans=='b'){ %>
+                                                                                                                                                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                                                <label class="correct" for="option 1"> <%= question[i][0].b %> </label><br>
+                                                                                                                                                                                <% } %>
+
+                                                                                                                                                                                    <% if(question[i][0].ans=='c'){ %>
+                                                                                                                                                                                        <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                                                        <label class="correct" for="option 1"> <%= question[i][0].c %> </label><br>
+                                                                                                                                                                                        <% } %>
+
+                                                                                                                                                                                            <% if(question[i][0].ans=='d'){ %>
+                                                                                                                                                                                                <input type="radio" id="option 1" name="<%= naam %>" value="a">
+                                                                                                                                                                                                <label class="correct" for="option 1"> <%= question[i][0].d %> </label><br>
+                                                                                                                                                                                                <% } %>
+
+                                                                                                                                                                                                    <% } %>
+                                                                                                                                                                                                        <br>
+
+                                                                                                                                                                                                        <% } %>
+                                                                                                                                                                                                            <form action="/close" method="POST">
+                                                                                                                                                                                                                <button type="submit" class="btn btn-dark">Close</button><br>
+                                                                                                                                                                                                            </form>
+        </div>
+        <div class="card-footer">
+            <h4>Correct Answers:
+                <%= right %>
+            </h4>
+            <h4>Wrong Answers:
+                <%= wrong %>
+            </h4>
+            <h4>UnAttempted Questions:
+                <%= unattempted %>
+            </h4>
+            <% var total=((right*pmark)-(wrong*nmark)); %>
+
+                <h4>
+                    Total Marks:
+                    <%= total %>
+                </h4>
+
+        </div>
+    </div>
+    <%- include('partials/footer') %>

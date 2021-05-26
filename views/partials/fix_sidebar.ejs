@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Etestzone</title>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bstyle.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 220px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            /* background-color: #212529; */
+            background-image: url(/images/chalkboard.jpg);
+            overflow-x: hidden;
+            padding-top: 80px;
+            margin-top: 20px;
+        }
+        
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            /* text-decoration: none; */
+            font-size: 18px;
+            color: #f1f1f1;
+            display: block;
+            font-family: "Cabin Sketch", "Roboto Slab", georgia, serif;
+        }
+        
+        .sidenav a:hover {
+            color: #72664c;
+            background: #f7eacc;
+            background: -webkit-linear-gradient(270deg, #f7eacc, #cfbe97);
+            background: linear-gradient(180deg, #f7eacc, #cfbe97);
+            box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .main {
+            margin-left: 220px;
+            /* Same as the width of the sidenav */
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 40px;
+            }
+            .sidenav a {
+                font-size: 14px;
+            }
+        }
+        
+        hr {
+            background-color: black;
+        }
+        
+        .slide-title {
+            color: white;
+            margin-bottom: 0;
+            font-family: "Cabin Sketch", "Roboto Slab", georgia, serif;
+            font-size: 60px;
+            font-size: 3.75rem;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="sidenav  menu-toggle" style="padding-top: 6rem;">
+
+        <div class="menu">
+            <img src="/images/line.png" alt="">
+            <a class="menu-item current-menu-item" href="/std_page">Home</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/school_test">Give test</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/teacher_page">Create test</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/attempted_test">Attempted Test</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/cbse_papers">CBSE Previous Year Paper Class 9-12</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/cbse_papers">Class 9-12 Notes</a>
+            <img src="/images/line.png" alt="">
+
+            <a class="menu-item" href="/logout">logout</a>
+            <img src="/images/line.png" alt="">
+            <a class="menu-item" href="/std_page">Test Series</a>
+            <img src="/images/line.png" alt="">
+        </div>
+    </div>
+    <div class="main" style="padding: 0px;">

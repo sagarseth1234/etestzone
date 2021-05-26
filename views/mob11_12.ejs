@@ -1,0 +1,91 @@
+<%- include('partials/header') %>
+
+    <div id='content-mobile'>
+        <%- include('partials/side_navbar') %>
+
+
+
+
+            <div style="text-align: center;">
+                <h3 style="margin-top: 2rem;">Science And Math</h3>
+                <div class="row" style="display: flex;margin: 10px;">
+
+                    <!--Class 12-->
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button name="subject" value="Math" type="submit" class="mob_course button primary large">Maths</button>
+                        </form>
+
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="chemistry">Chemistry</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="biology">Biology</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="physics">Physics</button>
+
+                        </form>
+                    </div>
+                </div>
+                <h3 style="margin-top: 2rem;">Language</h3>
+                <div class="row" style="display: flex;margin: 10px;">
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="english">English</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="hindi">Hindi</button>
+                        </form>
+                    </div>
+                </div>
+                <h3 style="margin-top: 2rem;">Arts</h3>
+                <div class="row" style="display: flex;margin: 10px;">
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="geography">Geography</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="political_science">Politics</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="history">History</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="economics">Economics</button>
+                        </form>
+                    </div>
+                </div>
+                <h3 style="margin-top: 2rem;">Commerse</h3>
+                <div class="row" style="display: flex;margin: 10px;">
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="statistics">Statistics</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="business">Business</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/<%= cl %>/subject" method="POST">
+                            <button type="submit" class="mob_course button primary large" name="subject" value="accounts">Accounts</button>
+                        </form>
+                    </div>
+                </div>
+            </div>

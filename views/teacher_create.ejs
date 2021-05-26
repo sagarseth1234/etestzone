@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Etestzone</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Arvo:400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="/css/bstyle.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+</head>
+
+<!-- green mystery is present is class site header -->
+
+<body>
+
+    <div id="site-content" style="top: 0px;">
+        <header class="site-header">
+            <div class="primary-header">
+                <div class="container">
+                    <a href="index.html" id="branding">
+                        <img src="images/logo.png" alt="etestzone">
+                        <h1 class="">Etestzone</h1>
+                    </a>
+                    <!-- #branding -->
+
+                    <div class="main-navigation">
+                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="menu-item current-menu-item"><a href="/index">Home</a></li>
+                            <li class="menu-item"><a href="course.html">Test Series</a></li>
+                            <li class="menu-item"><a href="student.html">CBSE</a></li>
+                            <li class="menu-item"><a href="/contact">Contact</a></li>
+                            <li class="menu-item"><a href="/login">login</a></li>
+
+                        </ul>
+                        <!-- .menu -->
+                    </div>
+                    <!-- .main-navigation -->
+
+                    <div class="mobile-navigation"></div>
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .primary-header -->
+
+            <div class="home-slider">
+                <div class="container">
+                    <div class="slider">
+                        <ul class="slides">
+                            <li>
+                                <div class="slide-caption">
+                                    <h2 class="slide-title">ETESTZONE <br> Stay Determined!!</h2>
+                                    <p>Create Your Own Test.Read instructions Carefully</p>
+                                    <form action="/new_test" method="POST">
+                                        <button class="button primary large">New Test</button>
+                                    </form>
+                                </div>
+                                <img style="width: 30%;" src="images/kid.png" alt="">
+                            </li>
+
+                        </ul>
+                        <!-- .slides -->
+                    </div>
+                    <!-- .slider -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .home-slider -->
+        </header>
+    </div>
+
+    <main class="main-content">
+
+
+        <div class="jumbotron" style="padding-right: 0px; padding-left: 0px; margin-bottom: 0px;">
+            <div style="font-weight: 400;">
+                <div class="container" style="margin-top: 2rem;">
+                    <h2 style="font-weight: 300;">Please read this if you are new on TestZone otherwise go in bottom to create a new test</h2><br><br> With the help of TestZone you can easily create your test and then publish it.the TestZone if completely trustable and disallow students
+                    to do cheating
+                    <br><br>
+                    <p>1) when you are giving your test details please write correct date and time of your test.</p><br>
+                    <p>2) After you complete your test.you can see it in upcoming test section in your profile</p><br>
+                    <h6> 3) The test id is written on the top of Your test or you can see it in upcoming test column</h6><br>
+                    <p>4) Give this test ID and correct date and time of your test to your students for loging purpose</p> <br>
+
+                    <p>5) students can give test after clicking the Student button on the front page and write their Username and Test ID</p><br>
+                    <h6>6) The username is generally the name student or the combination of name and rollno whatever you want to identify the students as which result is belong to which student.</h6><br>
+                    <p>7) In one class there can be a more than one student with same name so please include rollno in USERNAME to avoid trouble</p><br>
+                    <p>8) don,t worry about cheating on TestZone we didn,t give any opportunity to students to cheat as one student can give test only one time and no can submit the test before the end of the test</p><br>
+                    <p>9) your students will get the result at the end of the test automatically</p><br>
+                    <p>10) You can see the result of the by clicking result in previous result section in your profile</p><br>
+                    <p>11) Student,s can see there result any time after the completion of test even after a month or year just giving there username and test id and login in student section</p>
+                </div>
+
+
+                <div class="container" style="margin-bottom: 60px;margin-top: 60px; text-align: center;">
+                    <div>
+                        <h6 style="font-weight: 400;"> Wants to create New Test</h6>
+
+
+
+
+
+                        <form action="/new_test" method="POST">
+                            <button class="button primary large">New Test</button>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/bfooter') %>

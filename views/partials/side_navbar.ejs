@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bstyle.css">
+    <style>
+        #content-desktop {
+            display: block;
+        }
+        
+        #content-mobile {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            #content-desktop {
+                display: none;
+            }
+            #content-mobile {
+                display: block;
+            }
+        }
+        
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            /* background-color: #212529; */
+            background-image: url(/images/chalkboard.jpg);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+            font-family: "Cabin Sketch", "Roboto Slab", georgia, serif;
+        }
+        
+        .sidebar a:hover {
+            color: #72664c;
+            background: #f7eacc;
+            background: -webkit-linear-gradient(270deg, #f7eacc, #cfbe97);
+            background: linear-gradient(180deg, #f7eacc, #cfbe97);
+            box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+        
+        .openbtn:hover {
+            background-color: #444;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id=”content-mobile” style="padding: 0px;margin: 0px;">
+        <div id="mySidebar" class="sidebar">
+
+            <img src="/images/line.png" alt="">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+
+            <a href="/std_page">Home</a>
+            <img src="/images/line.png" alt="">
+            <a href="/school_test">Give test</a>
+            <img src="/images/line.png" alt="">
+            <a href="/teacher_page">Create test</a>
+            <img src="/images/line.png" alt="">
+            <a href="/attempted_test">Attempted Test</a>
+            <img src="/images/line.png" alt="">
+            <a href="/cbse_papers">CBSE Previous Year Paper Class 9-12</a>
+            <img src="/images/line.png" alt="">
+            <a href="/cbse_papers">Class 9-12 Notes</a>
+            <img src="/images/line.png" alt="">
+            <a href="#contact">Test Series</a>
+            <img src="/images/line.png" alt="">
+            <a href="#contact">logout</a>
+            <img src="/images/line.png" alt="">
+        </div>
+
+
+
+
+        <div style=" width: 100%;margin: 0px;top: 0px;padding: 0px;" id="main">
+            <header style="margin: 0px;" class="nav-header">
+                <div class="primary-nav-header">
+                    <div class="container">
+                        <a href="/std_page" id="branding">
+                            <img id="header-logo-mob" style="height: 30%;margin-top: 0px;" src="" alt="etestzone">
+                            <h1 style="margin-top: 8px;" class="logo-title">Etestzone</h1>
+                        </a>
+                        <!-- #branding -->
+                        <script>
+                            document.getElementById('header-logo-mob').setAttribute("src", "/images/logo.png");
+                        </script>
+                        <div class="main-navigation">
+                            <button onclick="openNav()" type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+
+                            <!-- .menu -->
+                        </div>
+                        <!-- .main-navigation -->
+
+                    </div>
+                    <!-- .container -->
+                </div>
+            </header>
+            <!-- <button onclick="openNav()" class="navbar-toggler" type="button" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+
+
+        </div>
+
+
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+    </div>

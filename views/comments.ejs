@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+
+    <div id='content-desktop'>
+        <%- include('partials/bdheader') %>
+
+            <%- include('partials/fix_sidebar') %>
+
+
+
+                <div style="padding-top: 10rem;margin-bottom: 0px;bottom: 0px;height: 900px;" class="container">
+
+
+
+                    <div>
+                        <% if(review){ %>
+                            <% review.comments.forEach(comment=>{%>
+                                <% var x= comment.user; %>
+                                    <% var name = x.substring(0, x.length - 10); %>
+
+                                        <div style="width: 95%;" class="card button primary large">
+                                            <p>
+                                                <%= name %> :
+                                                    <%= comment.comment %>
+                                            </p>
+
+                                        </div>
+
+
+
+                                        <%  });  %>
+                                            <% }else{ %>
+                                                <h3 style="color: silver;">No comments on this test</h3>
+                                                <% } %>
+                    </div>
+                </div>
+    </div>
+    </div>
+
+
+    <div id='content-mobile'>
+        <%- include('partials/side_navbar') %>
+
+            <div style="margin-top: 8rem;text-align: center;padding-bottom: 500px;">
+                <h1>Comments</h1>
+                <% review.comments.forEach(comment=>{%>
+                    <% var x= comment.user; %>
+                        <% var name = x.substring(0, x.length - 10); %>
+                            <div style="width: 95%;" class="card button primary large">
+                                <p>
+                                    <%= name %> :
+                                        <%= comment.comment %>
+                                </p>
+                            </div>
+                            <%  });  %>
+
+            </div>
+
+
+    </div>
+    </div>

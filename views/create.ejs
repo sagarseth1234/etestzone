@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+
+    <div class="info">
+        <% var x= no + 1 %>
+
+            <form id="submit" action="/create" method="POST">
+                <input type="hidden" name="tname" value="<%= tname %>">
+                <h3>question
+                    <%= x %>
+                </h3>
+
+                <textarea name="Q" form="submit" class="text-center" placeholder="question no <%= x %>" cols="30" rows="6" required></textarea>
+                <br><br><br>
+
+                <input type="text" placeholder="a" name="a" required> <input type="radio" name="A" value="a" required> <br>
+                <br> <input type="text" placeholder="b" name="b" required> <input type="radio" name="A" value="b" required> <br>
+                <br> <input type="text" placeholder="c" name="c" required> <input type="radio" name="A" value="c" required> <br>
+                <br> <input type="text" placeholder="d" name="d" required> <input type="radio" name="A" value="d" required> <br>
+                <br> <label for="answer">please choose the correct answer </label>
+                <div style="padding-bottom: 4rem;" class="row">
+                    <div class="col-6">
+                        <button class="btn btn-dark" form="submit" type="submit">Next Question</button>
+                    </div>
+            </form>
+            <div class="col-6">
+                <form id="finish" action="/sample_school_test" method="POST">
+                    <input type="hidden" name="tname" value="<%= tname %>">
+                    <button form="finish" type="submit" class="btn btn-dark">Finish</button>
+                </form>
+            </div>
+            </div>
+
+
+
+    </div>

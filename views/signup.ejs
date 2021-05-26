@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Etestzone</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Arvo:400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="/css/bstyle.css">
+
+    <!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+</head>
+
+<!-- green mystery is present is class site header -->
+
+<body>
+
+    <div id="site-content">
+        <header class="site-header">
+            <div class="primary-header">
+                <div class="container">
+                    <a href="index.html" id="branding">
+                        <img src="images/logo.png" alt="etestzone">
+                        <h1 class="">Etestzone</h1>
+                    </a>
+                    <!-- #branding -->
+
+                    <div class="main-navigation">
+                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="menu-item current-menu-item"><a href="/index">Home</a></li>
+                            <li class="menu-item"><a onclick="sshow_test_series();" href="#">Test Series</a>
+                                <div class="dropdown" id="sshow_test_series">
+                                    <ul class="menu ">
+                                        <li style="margin: 10px;width: 100%;"><a href="/domain/jee">JEE</a></li>
+                                        <li style="margin: 10px;width: 100%;"><a href="/domain/nda">NDA</a></li>
+                                        <li style="margin: 10px;width: 100%;"><a href="/domain/neet">NEET</a></li>
+                                        <li style="margin: 10px;width: 100%;"><a href="/std_page">more</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu-item"><a href="student.html">CBSE</a></li>
+                            <li class="menu-item"><a href="/contact">Contact</a></li>
+                            <li class="menu-item"><a onclick="suser();" href="#">login/sign up</a>
+                                <div id="sauth" class="dropdown">
+                                    <ul class="menu ">
+                                        <li style="margin: 10px;width: 100%;"><a href="/login">Login</a></li>
+                                        <li style="margin: 10px;width: 100%;"><a href="/signup">SignUp</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <!-- .menu -->
+                    </div>
+                    <!-- .main-navigation -->
+
+                    <div class="mobile-navigation"></div>
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .primary-header -->
+
+            <div style="text-align: center;padding-left: 0px;padding-right: 0px;" class="page-title">
+                <div class="container row">
+
+                    <div class="col-md-7">
+                        <h2>SIGN UP</h2>
+
+                        <form id="signup_form" style="text-align: left;" action="/std_signup" method="POST" class="contact-form">
+                            <p>
+                                <label class="details" for="email">Email</label>
+                                <span class="control"><input type="email" name="username" class="button primary large" id="name" placeholder="Email address" required></span>
+                            </p>
+                            <p>
+                                <label class="details" for="name">Password</label>
+                                <span class="control"><input id="firsttime" type="password" name="password" value="" class="button primary large" id="email" placeholder="Password" required></span>
+                            </p>
+                            <p>
+                                <label class="details" for="name">Password</label>
+                                <span class="control"><input id="secondtime" value="" type="password" class="button primary large" id="email" placeholder="Confirm Password" required></span>
+                            </p>
+                            <p class="text-right">
+                                <span style="margin-right: 5%;"><a class="details" href="/login">Login</a></span>
+                                <button onclick="confirm_password();" type="button" class="button primary large">Sign Up</button>
+                            </p>
+                            <script>
+                                function confirm_password() {
+                                    var p1 = document.getElementById('firsttime').value;
+                                    var p2 = document.getElementById('secondtime').value;
+                                    if (p1 == "" && p2 == "") {
+                                        alert("Please Set Password");
+                                    } else {
+                                        if (p1 == p2) {
+                                            document.getElementById('signup_form').submit();
+                                        } else {
+                                            alert("Passwords are not Matching");
+                                        }
+                                    }
+                                }
+                            </script>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="images/kid.png" style="width: 60%;" alt="kid">
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+
+    <script>
+        if (<%= g %> == 1) {
+            alert("UserName or user already exist please try to Login");
+        } else if (<%= g %> == 2) {
+            alert("Please enter username and password both for new user signup");
+        }
+    </script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h3 class="widget-title">Contact us</h3>
+                        <address>ETESTZONE <br>Online Mock Tests And TestSeries <br>For JEE,NEET,NDA</address>
+
+                        <a href="gmail:etestzone1974@gmail.com">etestzone1974@gmail.com</a> <br>
+                        <a href="tel:9055304085">(0191) 9055304085</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h3 class="widget-title">Social media</h3>
+                        <p>Follow Us on Social media for new updates</p>
+                        <div class="social-links circle">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-mail-forward"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h3 class="widget-title">Resources</h3>
+                        <li>
+                            <a href="#">
+                                JEE TESTSERIES
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                NEET TESTSERIES
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                NDA TESTSERIES
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                NCERT SOLUTIONS
+                            </a>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <p>SignUp for our new letter for latest updates</p>
+                        <form action="#" class="subscribe">
+                            <input type="email" placeholder="Email Address...">
+                            <input type="submit" class="light" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="copy">Copyright <span id="year"></span> ETESTZONE. All rights reserved.</div>
+            <script>
+                var year = new Date();
+                year = year.getFullYear();
+                document.getElementById('year').innerHTML = year;
+            </script>
+        </div>
+
+    </footer>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
+    <script src="javascripts/script.js"></script>
+</body>
+
+</html>

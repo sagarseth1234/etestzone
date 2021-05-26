@@ -1,0 +1,310 @@
+<%- include('partials/header') %>
+
+    <div id='content-mobile'>
+        <%- include('partials/side_navbar') %>
+
+
+            <div class="container">
+
+                <!--Class 11-->
+
+
+                <div style="display: none;" id="class11">
+                    <h3 style="margin-top: 2rem;">Science And Math</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="math">Math</button>
+                            </form>
+
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="chemistry">Chemistry</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="biology">Biology</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="physics">Physics</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Language</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="english">English</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="hindi">Hindi</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Arts</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="geography">Geography</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="political_science">Politics</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="history">History</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="economics">Economics</button>
+                            </form>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 2rem;">Commerse</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="statistics">Statistics</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="business">Business</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="/class11" method="POST">
+                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="accounts">Accounts</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+                <!-- ....................the upper part in invisile................................. -->
+
+
+                <div class="row" style="padding-bottom: 500px;">
+                    <div class="col-6">
+                        <form action="/class12" method="POST">
+                            <button class="button primary large mob_class" type="submit">Class 12</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="/class11" method="POST">
+                            <button class="button primary large mob_class" type="submit">Class 11</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="/class10" method="POST">
+                            <button class="button primary large mob_class" type="submit">Class 10</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="/class9" method="POST">
+                            <button class="button primary large mob_class" type="submit">Class 9</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <script>
+                </script>
+            </div>
+    </div>
+
+
+
+    <!--desktop html code starts here-->
+
+
+
+
+
+
+    <div id='content-desktop'>
+        <%- include('partials/bdheader') %>
+
+            <%- include('partials/fix_sidebar') %>
+
+                <div class="container" style="padding-top: 7rem;">
+                    <h1 style=" text-align: center;font-weight: 10;">Class 12</h1>
+                    <div style="border: groove;margin: 10px; " class="row">
+
+
+
+                        <!--Class 12-->
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button name="subject" value="math" type="submit" class="course btn btn-outline-danger waves-effect">Math</button>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-primary waves-effect" name="subject" value="chemistry">Chemistry</button>
+
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="biology">Biology</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="physics">Physics</button>
+
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="english">English</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="geography">Geography</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="history">History</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="economics">Economics</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="statistics">Statistics</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="business">Business</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class12d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="accounts">Accounts</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <br><br>
+
+
+
+                    <!--Class 11-->
+                    <h1 style="text-align: center;c">Class 11</h1>
+                    <div style="border: groove;margin: 10px; " class="waves-effect row">
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="math">Math</button>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="chemistry">Chemistry</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="biology">Biology</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="physics">Physics</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="english">English</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="geography">Geography</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="history">History</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="economics">Economics</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="statistics">Statistics</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="business">Business</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class11d" method="POST">
+                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="accounts">Accounts</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <div style="margin: 10px;" class="row">
+                        <div class="col-md-3">
+                            <form action="/class10" method="POST">
+                                <button class="classes" type="submit">Class 10</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <form action="/class9" method="POST">
+                                <button class="classes" type="submit">Class 9</button>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>

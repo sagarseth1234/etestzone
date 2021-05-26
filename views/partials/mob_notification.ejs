@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-inner {
+            /* background-color: #996600; */
+            height: 8em;
+            /* color: white; */
+        }
+        
+        .carousel-item {
+            padding: 3px;
+            margin-left: 10rem;
+        }
+        
+        .notify {
+            font-size: 5px;
+            /* color: white; */
+            text-align: left;
+        }
+        
+        .to {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div style="height: 6em;" class="carousel-inner">
+            <% for(var i=0;i<notify.length;i++){ %>
+                <% var ids = 's'+i; %>
+                    <div style="padding-left: 0px;margin-left: 5px;height: 6em;" id="<%= ids %>" class="carousel-item">
+
+
+
+                        <form class="note" action="/test_series" method="POST">
+
+                            <input type="hidden" name="domain" value="<%= notify[i].domain %>">
+                            <input type="hidden" name="selected_ts" value="<%= notify[i].tsname %>">
+                            <input type="hidden" name="ts_id" value="<%= notify[i]._id %>">
+
+
+                            <button style="padding-left: 0px;margin-left: 0px;width: 100%;height: 6em;" id="<%= i %>" value="<%= i %>" type="button" class="btn" onclick="checkit(this.id)">
+                        
+                        
+                       
+                        
+                                <div style="display: flex;">
+                                    <div >
+                                      <img class="card-img-top" style="width: 90px;height: 60px;border-radius: 15px;" src="\images\<%= notify[i].domain %>.png" alt="Card image cap">
+                                    </div>
+                                    <div style="font-size: 20px;margin-left: 2%;" class=" notify" style="margin-top: 10px;">
+                                    <% var domain= notify[i].domain %>
+                                    <%= domain.toUpperCase() %> :
+
+                                        <%= notify[i].tsname %>
+                                            
+                                    </div>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <div class="notify">
+                                            <p>
+                                                Time :
+                                                <%= notify[i].date %>
+                                                     <span >  - </span>  
+                                                  <% var y= notify[i].etime; %>
+                                                  <% var ename = y.substring(y.length, y.length - 5); %>
+                                                     <%= ename %>
+                                            </p>
+                                        </div>
+                                    <div class="notify" >
+                                        <p style="margin-top: 0rem;">
+                                          BY :
+                                          <% var x= notify[i].teacher; %>
+                                             <% var name = x.substring(0, x.length - 10); %>
+                                            <%= name %>
+sa
+                                         </p>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+
+                    </div>
+                    <% } %>
+        </div>
+
+        <!-- Left and right controls -->
+        <a style="width: 1rem;" class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a style="width: 1rem;margin-left: 0px;" class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+            document.getElementById("s0").classList.add("active");
+        });
+
+
+        function checkit(clicked_id) {
+
+            <% for(var i=0;i<notify.length;i++){ %>
+            var key = document.getElementById(clicked_id).value;
+
+            if (key == <%= i %>) {
+
+                if ("<%= notify[i].date%>" <= "<%= current %>") {
+                    document.getElementsByClassName('note')[<%= i %>].submit();
+                } else {
+                    alert("The test will open on <%= notify[i].date %> only");
+                }
+            }
+            <% } %>
+        }
+    </script>
+
+</body>
+
+</html>

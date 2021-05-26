@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Etestzone</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Arvo:400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="/css/bstyle.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+</head>
+
+<!-- green mystery is present is class site header -->
+
+<body>
+
+    <div id="site-content" style="top: 0px;">
+        <header class="site-header">
+            <div class="primary-header">
+                <div class="container">
+                    <a href="index.html" id="branding">
+                        <img src="images/logo.png" alt="etestzone">
+                        <h1 class="">Etestzone</h1>
+                    </a>
+                    <!-- #branding -->
+
+                    <div class="main-navigation">
+                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="menu-item current-menu-item"><a href="/index">Home</a></li>
+                            <li class="menu-item"><a href="course.html">Test Series</a></li>
+                            <li class="menu-item"><a href="student.html">CBSE</a></li>
+                            <li class="menu-item"><a href="/contact">Contact</a></li>
+                            <li class="menu-item"><a href="/login">login</a></li>
+
+                        </ul>
+                        <!-- .menu -->
+                    </div>
+                    <!-- .main-navigation -->
+
+                    <div class="mobile-navigation"></div>
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .primary-header -->
+
+            <div class="home-slider">
+                <div class="container">
+                    <div class="slider">
+                        <ul class="slides">
+                            <li>
+                                <div class="slide-caption">
+                                    <h2 class="slide-title">ETESTZONE <br> Stay Determined!!</h2>
+                                    <p>See Upcoming,s and Previous Tests Created by you or Create a new One</p>
+                                    <a href="/teacher_create" role="button">
+                                        <button class=" button primary large">Create Test</button>
+                                    </a>
+                                </div>
+                                <img style="width: 30%;" src="images/kid.png" alt="">
+                            </li>
+
+                        </ul>
+                        <!-- .slides -->
+                    </div>
+                    <!-- .slider -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .home-slider -->
+        </header>
+    </div>
+
+    <main class="main-content">
+
+
+
+
+        <div class="jumbotron centered" style="padding-right: 0px; padding-left: 0px;margin-bottom: 0px;">
+            <div class="container">
+                <i class="fa fa-graduation-cap icon-large fa-6x"></i>
+                <h2 class="display-3">EtestZone</h2>
+                <p style="font-size: 18px;" class="lead">Create,publish and track your test result easily</p>
+                <br>
+                <div style="display: flex;">
+                    <div style="float: left;margin-right: 20%;">
+
+                        <h4 class="name" style="margin-right: 20%;font-weight: 100;">
+
+                            <span id="uname">
+                              
+                        </span>
+                        </h4>
+                        <script>
+                            var urname = "<%= user %>";
+                            urname = urname.substring(0, urname.length - 10);
+                            document.getElementById('uname').innerHTML = urname;
+                        </script>
+                    </div>
+                    <div style="right: 10%;position: absolute;">
+                        <a href="/teacher_create" role="button">
+                            <button class="btn-sm button primary large">Create Test</button>
+                        </a>
+                    </div>
+                </div>
+                <hr><br><br><br><br>
+
+                <h2 style="font-weight: 100;">Upcoming Test</h2><br>
+
+                <table class="table">
+                    <% var ucount=1; %>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Test ID</th>
+                                <th scope="col">Test</th>
+                                <th scope="col">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var count=1; %>
+                                <% upcoming.forEach(test =>{ %>
+
+                                    <tr>
+                                        <th scope="row">
+                                            <%= count %>
+                                        </th>
+                                        <td>
+                                            <%= test.name %>
+
+                                        </td>
+                                        <td>
+                                            <form action="/qpaper" method="POST">
+                                                <input type="hidden" name="test_name" value="<%= test.name %>">
+                                                <button class="btn btn-sm">Test</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col" style="padding-left: 0px; padding-right: 0px;">
+                                                    <form action="/tresult" method="POST">
+                                                        <input type="hidden" name="test_name" value="<%= test.name %>">
+                                                        <p id="upcoming">Result</p>
+                                                    </form>
+                                                </div>
+                                                <div class="col" style="padding-left: 0px; padding-right: 0px;">
+
+                                                    <form action="/delete" method="post" onsubmit="return confirm('Do you really want to delete this test');">
+                                                        <input type="hidden" name="test" value="<%= test.name %>">
+                                                        <button class="btn btn-sm "><p style="font-weight: bolder;">--</p></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% count++; %>
+                                        <%  }) %>
+                        </tbody>
+                </table>
+                <script>
+                    document.getElementById("upcoming").onclick = function() {
+                        alert('You cannot see result before the TEST');
+                    }
+                </script>
+
+                <hr><br><br><br><br>
+
+                <h2 style="font-weight: 100;">Previous Test</h2><br>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Test ID</th>
+                            <th scope="col">Test</th>
+                            <th scope="col">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% var count=1; %>
+                            <% previous.forEach(test =>{ %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= count %>
+                                    </th>
+                                    <td>
+                                        <%= test.name %>
+                                    </td>
+                                    <td>
+                                        <form action="/qpaper" method="POST">
+                                            <input type="hidden" name="test_name" value="<%= test.name %>">
+                                            <button class="btn btn-sm">Test</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col" style="padding-left: 0px; padding-right: 0px;">
+                                                <form action="/tresult" method="POST">
+                                                    <input type="hidden" name="test_name" value="<%= test.name %>">
+                                                    <button class="btn btn-sm delete">Result</button>
+                                                </form>
+                                            </div>
+                                            <div class="col" style="padding-left: 0px; padding-right: 0px;">
+
+                                                <form action="/delete" method="post" onsubmit="return confirm('Do you really want to delete this test');">
+                                                    <input type="hidden" name="test" value="<%= test.name %>">
+                                                    <button class="btn btn-sm "><p style="font-weight: bolder;">--</p></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+                                <% count++; %>
+                                    <%  }) %>
+                    </tbody>
+                </table>
+
+
+
+
+
+            </div>
+        </div>
+
+        <%- include('partials/bfooter') %>

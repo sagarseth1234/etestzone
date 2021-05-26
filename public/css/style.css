@@ -1,0 +1,339 @@
+.correct {
+    background-color: #91d18b;
+}
+
+.wrong {
+    background-color: #ff5f40;
+}
+
+.zoom {
+    transition: transform .4s;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.mob_sub {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    border-radius: 20px;
+    height: 4em;
+    width: 100%;
+    margin: 20px;
+}
+
+.course {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    border-radius: 20px;
+    height: 4em;
+    width: 70%;
+    margin: 20px;
+}
+
+.mob_course {
+    margin: 5px;
+}
+
+.mob_class {
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+img:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+.fotter {
+    background-color: #212529;
+    height: 6rem;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    z-index: 5;
+}
+
+.message {
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    background-color: whitesmoke;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    width: 330px;
+    margin-top: 4rem;
+}
+
+.email {
+    margin: 10px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.login {
+    color: white;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    width: 330px;
+    z-index: 2;
+}
+
+.simple:hover {
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.classes {
+    background-color: #212529;
+    color: whitesmoke;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    border-radius: 20px;
+    height: 80px;
+    width: 80%;
+    margin: 20px;
+}
+
+button.classes:hover {
+    color: #212529;
+    background-color: whitesmoke;
+}
+
+#navbar {
+    overflow: hidden;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+#content-desktop {
+    display: block;
+}
+
+#content-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #content-desktop {
+        display: none;
+    }
+    #content-mobile {
+        display: block;
+    }
+}
+
+body {
+    background-color: #E8ECEF;
+}
+
+.centered {
+    text-align: center;
+}
+
+.secret-text {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+}
+
+p {
+    font-size: 16px;
+}
+
+.show_tests {
+    border-style: groove;
+    border-radius: 5px;
+}
+
+.show_testcard {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-image: url(/images/chalkboard.jpg);
+    color: white;
+    font-family: "Cabin Sketch", "Roboto Slab", georgia, serif;
+    height: 70px;
+}
+
+.show_testcard h5 {
+    margin: 3px;
+    padding-top: 10px;
+    padding: 16px 10px;
+}
+
+.fa-heart {
+    font-size: 16px;
+}
+
+.box {
+    font-size: 250%;
+    background-color: gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card {
+    margin-bottom: 10vh;
+}
+
+i {
+    text-align: left;
+    padding-left: 0.5em;
+    font-size: 30px;
+    height: 30px;
+}
+
+.card-header {
+    margin-left: 0px;
+}
+
+.info {
+    background-color: #e0ece4;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-bottom: : 4rem;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.delete {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.box {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+label {
+    padding-right: 100px;
+}
+
+.quest_nav {
+    border-width: 1px;
+    margin: 5px;
+    font-size: xx-large;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding-top: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px grey;
+}
+
+
+/*pop to take reviews */
+
+{
+    box-sizing: border-box;
+}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+.open-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    border-radius: 5px;
+}
+
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+
+/* Add styles to the form container */
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}

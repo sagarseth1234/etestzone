@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+    <h1 style="text-align: center;margin-top: 2rem;">
+        <%= user  %>
+    </h1>
+    <a href="/mytest_create"><button type="submit" class="btn btn-dark">create test Series</button></a>
+    <h1 style="text-align: center;">Your tests</h1>
+    <div class="row">
+
+        <% tests.forEach(test_series=>{ %>
+
+
+            <div style="text-align: center;" class="col-6">
+                <form action="/selected_test_series" method="POST">
+                    <input type="hidden" name="test_series" value="<%= test_series.tsname %>">
+                    <button class="btn"><%= test_series.tsname %></button>
+                </form>
+            </div>
+
+
+            <%  }) %>
+    </div>
+
+    <a href="/upload_pdf"><button class="btn btn-dark">Upload a pdf</button></a>
+    <a href="/uploaded_files"><button class="btn btn-dark">Uploaded Files</button></a>
+    <a href="/quick_test"><button class="btn btn-dark">Create Random Test</button></a>
+
+
+    <%- include('partials/footer') %>

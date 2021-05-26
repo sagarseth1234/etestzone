@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+    <img style="position: absolute;z-index: 1;text-align: center;" class="simple" src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="img" width="100%" height="400px">
+
+
+
+    <div class="card login">
+
+        <div class="card-body login " style="text-align: left; ">
+            <!-- Makes POST request to /login route -->
+            <form style="margin-top: 30%;" method="POST" action="/forget">
+                <div class="form-group ">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="username">
+                </div>
+                <button type="submit" onclick='forget();' class="btn btn-dark ">Send mail</button>
+
+            </form>
+            <script>
+                function forget() {
+                    alert("link has sent on your email account.change your password from there...");
+                }
+            </script>
+        </div>
+    </div>
+    <div class="jumbotron centered" style="padding-right: 0px; padding-left: 0px;margin-bottom: 0px;z-index: 5;margin-top: 390px; ">
+        <div class="container " style="padding-bottom: 60px; ">
+            <h1 class="display-3 ">EtestZone</h1>
+            <p style="font-size: 18px; " class="lead "> Welcome to India's largest online test platform</p>
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="card card-footer row fotter" style="background-color:  #212529;margin-bottom: 0px;color: white;position: relative;">
+        <div class="col-12" style="text-align: center;margin: 0px;padding: 0px;">
+            <a onclick="contact();" style="color: white;margin: 0px;padding: 0px;" href="#contact">contact us</a> <br> <br>
+            <a href="" style="color: white; margin: 0px;padding: 0px;"> <i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/sagarseth_1974?r=nametag" style="color: white; margin: 0px;padding: 0px;"> <i class="fab fa-instagram"></i></a>
+        </div>
+
+    </div>
+    </div>

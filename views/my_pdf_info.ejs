@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script>
+        window.onload = function() {
+
+        };
+    </script>
+
+
+    <div class="jumbotron" style="margin-bottom: 0px;">
+        <div class="container">
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="yes" style="text-align: center;font-size:310%;">Upload PDF on drive</h1>
+            <br>
+            <hr><br>
+            <form action="/mydrive_pdf_info" method="POST" enctype="multipart/form-data" target="wow">
+
+                <h5>Enter Domain</h5>
+                <select name="domain" placeholder='day'> 
+                       <option value='jee'> JEE </option>
+                       <option value="neet">NEET</option>
+                       <option value="cbse">CBSE</option>
+                       <option value="nda">NDA</option>
+                       <option value="bank">Bank</option>
+                       <option value="cds">CDS</option>
+                       <option value="afcat">AFCAT</option>
+                       <option value="inet">INET</option>
+                       <option value="railway">Railway</option>
+                       <option value="defence">Army GD</option>
+                       <option value="defence">Police</option>
+                </select><br><br>
+
+
+                <h5>Enter the name of your file:</h5>
+                <input type="text" name="fname" placeholder="File name" required>
+                <br>
+                <br>
+
+                <h5>Enter Divisions:</h5>
+                <input type="text" name="division" placeholder="Division">
+                <br>
+                <br>
+
+
+                <input type="file" name="mypdf" multiple>
+
+
+
+                <button class="btn btn-dark" type="submit">  Proceed..  </button>
+                <br><br><br><br>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

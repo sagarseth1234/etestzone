@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+    <div id='content-desktop'>
+        <%- include('partials/bdheader') %>
+
+            <%- include('partials/fix_sidebar') %>
+
+                <div class="container" style="padding-top: 8rem;padding-bottom: 400px;">
+                    <h2 style="font-weight: 100;">Local Test</h2>
+                    <br>
+
+                    <% var total = results.length; %>
+                        <%   for(var i=0;i<total;i++){ %>
+
+                            <form action="/show_localtest_result" method="POST">
+                                <input type="hidden" name="mytest" value="<%= testids[i] %>">
+                                <input type="hidden" name="student" value="<%= results[i].name %>">
+
+
+                                <div class="card show_testcard">
+                                    <div class="card-body" style="padding: 0px;">
+                                        <div class="row">
+                                            <div class="col-6" style="text-align: left;">
+                                                <h5 style="margin-left: 5%;margin-top: 0px; ">
+                                                    <%= testids[i].toUpperCase() %>
+                                                </h5>
+                                            </div>
+                                            <div class="col-6" style="text-align: right;">
+                                                <button style="margin-right: 5%;" type="submit" class="button primary large">Result</button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <% } %>
+                </div>
+    </div>
+    </div>
+
+
+
+
+    <div id='content-mobile' style="padding-bottom: 400px;">
+        <%- include('partials/side_navbar') %>
+
+
+            <div class="container" style="padding-top: 4rem;">
+                <h2 style="font-weight: 100;">Local Test</h2>
+                <br>
+
+                <% var total = results.length; %>
+                    <%   for(var i=0;i<total;i++){ %>
+
+                        <form action="/show_localtest_result" method="POST">
+                            <input type="hidden" name="mytest" value="<%= testids[i] %>">
+                            <input type="hidden" name="student" value="<%= results[i].name %>">
+
+
+                            <div class="card show_testcard">
+                                <div class="card-body" style="padding: 0.7rem;">
+                                    <div class="row">
+                                        <div class="col-6" style="text-align: left;">
+                                            <h5 style="margin-left: 5%; padding-top: 7px;">
+                                                <%= testids[i].toUpperCase() %>
+                                            </h5>
+                                        </div>
+                                        <div class="col-6" style="text-align: right;">
+                                            <button style="margin-right: 5%;" type="submit" class="btn btn-dark">Result</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <% } %>
+            </div>
+
+    </div>
