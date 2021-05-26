@@ -3,6 +3,9 @@ application:
   name: "etestzone"
   project: "etestzone"
   organization: "QoveryCommunity"
+  publicly_accessible: true
+  port: 3000
+
 routers:
 - name: "main-etestzone"
   routes:
