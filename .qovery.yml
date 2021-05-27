@@ -8,7 +8,7 @@ application:
 
 routers:
 - name: "main-etestzone"
-custom_domains:
+  custom_domains:
   - branch: master
     domain: etestzone.in
   routes:
