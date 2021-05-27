@@ -8,6 +8,9 @@ application:
 
 routers:
 - name: "main-etestzone"
+custom_domains:
+  - branch: master
+    domain: my.domain.tld
   routes:
   - application_name: "etestzone"
     paths:
