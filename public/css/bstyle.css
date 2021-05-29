@@ -2187,13 +2187,6 @@ all and (min-device-pixel-ratio: 1.5) {
     z-index: 9;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-    .site-header:after {
-        background: url(/images/wood@2x.png) repeat-x;
-    }
-}
-
 .primary-header {
     background: url(/images/line.png) repeat-x bottom center;
     padding-bottom: 30px;
