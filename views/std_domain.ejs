@@ -19,22 +19,20 @@
 
 
                                     <div class="card zoom" style="width: 70%; box-shadow: 10px 10px 5px grey;">
-                                        <form action="/test_series" method="POST">
-                                            <input type="hidden" name="domain" value="<%= test_series[i].domain %>">
-                                            <input type="hidden" name="selected_ts" value="<%= test_series[i].tsname %>">
-                                            <input type="hidden" name="ts_id" value="<%= test_series[i]._id %>">
-                                            <button type="submit" class="btn button primary large" style="padding: 0px;margin: 0px;">
+                                        <a href="/test_series/<%= test_series[i]._id %>" style="text-decoration: none;color: inherit;">
+
+                                            <button type="button" class="btn button primary large" style="padding: 0px;margin: 0px;">
                                         <img class="card-img-top simple" style="width: 50%;height: 40%;margin-bottom: 12px;border-radius: 40px;" src="\images\<%= test_series[i].domain %>.png" alt="Card image cap">
-                                        <div class="card-body" style="padding-top: 0px;padding-bottom: 0px;">
-                                            <h6 style="margin: 0px;font-weight: normal;font-size: 18px;">
+                                        <div  class="card-body" style="padding-top: 0px;padding-bottom: 0px;">
+                                            <h6 style="margin: 0px;font-weight: normal;font-size: 18px;width: 100%;">
                                                 <% var tname=test_series[i].tsname.toUpperCase(); %>
                                                     <%= tname %>
                                             </h6>
-                                            <p>
+                                            <p style="width: 100%;">
                                                 <%= test_series[i].total_test  %> Test
                                                     <br> <%= test_series[i].rating %> Star Ratings
                                                         <br>
-                                                        <a  href="/comments/<%= test_series[i].tsname %>/<%= test_series[i].domain %>">Reviews</a>
+                                                        <a  href="/comments/<%= test_series[i].tsname %>/<%= test_series[i].domain %>" style="color: #719c51;">Reviews</a>
                                                         
                                           <br> By:
                                                     <% var x= test_series[i].teacher; %> 
@@ -52,7 +50,8 @@
                                             <h3 style="margin: 0px;padding: 10px;"><%= price %> /- </h3>
                                         </div>
                                         </button>
-                                        </form>
+
+                                        </a>
                                     </div>
                                 </div>
                                 <% } %>

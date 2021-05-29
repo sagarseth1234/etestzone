@@ -22,7 +22,7 @@ const methodOverride = require('method-override');
 const fs = require('fs');
 
 
-const date = require(__dirname + "/date.js");
+const date = require(__dirname + "/appfiles/date.js");
 var uniqueValidator = require('mongoose-unique-validator');
 
 const findOrCreate = require("mongoose-findorcreate");
@@ -246,7 +246,9 @@ app.get('/contact', function(req, res) {
 
 
 
-
+app.get('/sitemap.xml', function(req, res) {
+    res.sendFile('/sitemap.xml');
+});
 
 
 
@@ -971,23 +973,23 @@ app.post("/class8", function(req, res) {
     res.render('subject', { cl: 'class8', user: USER });
 });
 
-app.post("/class9", function(req, res) {
+app.get("/class9", function(req, res) {
     //var USER = req.user.username;
     res.render('subject', { cl: 'class9' });
 });
 
-app.post("/class10", function(req, res) {
+app.get("/class10", function(req, res) {
     //var USER = req.user.username;
     res.render('subject', { cl: 'class10' });
 });
 
-app.post("/class12", function(req, res) {
+app.get("/class12", function(req, res) {
     //console.log("class 12");
     //var USER = req.user.username;
     res.render('mob11_12', { cl: 'class12' });
 });
 
-app.post("/class11", function(req, res) {
+app.get("/class11", function(req, res) {
     //var USER = req.user.username;
     res.render('mob11_12', { cl: 'class11' });
 });
@@ -1001,32 +1003,32 @@ app.post("/domain", function(req, res) {
 app.post("/class6/subject", function(req, res) {
     var std_class = 'class6';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 app.post("/class7/subject", function(req, res) {
     var std_class = 'class7';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 
 app.post("/class8/subject", function(req, res) {
     var std_class = 'class8';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 app.post("/class9/subject", function(req, res) {
     var std_class = 'class9';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 app.post("/class10/subject", function(req, res) {
     var std_class = 'class10';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 
@@ -1034,13 +1036,13 @@ app.post("/class10/subject", function(req, res) {
 app.post("/class12/subject", function(req, res) {
     var std_class = 'class12';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 app.post("/class11/subject", function(req, res) {
     var std_class = 'class11';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 //finish
@@ -1048,7 +1050,7 @@ app.post("/class11/subject", function(req, res) {
 app.post("/class12d", function(req, res) {
     var std_class = 'class12';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
 
@@ -1056,10 +1058,10 @@ app.post("/class12d", function(req, res) {
 app.post("/class11d", function(req, res) {
     var std_class = 'class11';
     var subject = req.body.subject;
-    res.redirect("/class/" + std_class + "/" + subject);
+    res.redirect("/cbse/" + std_class + "/" + subject);
 });
 
-app.get("/class/:std_class/:subject", function(req, res) {
+app.get("/cbse/:std_class/:subject", function(req, res) {
     var book1pdf = [];
     var book1 = [];
     var book2pdf = [];
@@ -1311,11 +1313,11 @@ app.get("/comments/:tsname/:domain", function(req, res) {
     });
 });
 
-app.post("/test_series", function(req, res) {
-    var ts_id = req.body.ts_id;
+// app.post("/test_series", function(req, res) {
+//     var ts_id = req.body.ts_id;
 
-    res.redirect("/test_series/" + ts_id);
-});
+//     res.redirect("/test_series/" + ts_id);
+// });
 
 app.post("/selected_test", function(req, res) {
     var test_series = req.body.test_series;
