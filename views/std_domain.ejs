@@ -93,11 +93,10 @@
 
 
                                 <div class="card zoom" style="box-shadow: 10px 10px 5px grey;padding-bottom: 0px;padding-top: 0px;border-radius: 15px;">
-                                    <form action="/test_series" method="POST">
-                                        <input type="hidden" name="domain" value="<%= test_series[i].domain %>">
-                                        <input type="hidden" name="selected_ts" value="<%= test_series[i].tsname %>">
-                                        <input type="hidden" name="ts_id" value="<%= test_series[i]._id %>">
-                                        <button class="button primary large" style="padding: 0px;margin: 0px;border-radius: 15px;" type="submit">
+                                    <a href="/test_series/<%= test_series[i]._id %>" style="text-decoration: none;color: inherit;">
+
+
+                                        <button class="button primary large" style="padding: 0px;margin: 0px;border-radius: 15px;" type="button">
                                             <img class="card-img-top" style="width: 50%;height: 40%;margin-left: 0%" src="\images\<%= test_series[i].domain %>.png" alt="Card image cap">
                                             <div class="card-body" style="padding: 0px;margin: 0px;">
                                                 <h6 style="margin: 10px;">
@@ -125,7 +124,7 @@
                                                 <h3 style="margin: 0px;padding: 10px;background-color: #72664c;"><%= price %> /- </h3>
                                             </div>
                                         </button>
-                                    </form>
+                                    </a>
                                 </div>
                             </div>
                             <% } %>
