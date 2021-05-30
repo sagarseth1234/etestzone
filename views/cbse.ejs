@@ -1,318 +1,321 @@
 <%- include('partials/header') %>
-<title>CBSE</title>
-</head>
-<body>
-    <div id='content-mobile'>
-        <%- include('partials/side_navbar') %>
+    <meta name="description" content="Free CBSE NCERT solutions,Notes and previous year papers for class 9th to 12">
+    <title>CBSE NCERT Solutions|Notes|Previous year paper</title>
+    </head>
+
+    <body>
+        <div id='content-mobile'>
+            <%- include('partials/side_navbar') %>
 
 
-            <div class="container">
-
-                <!--Class 11-->
-
-
-                <div style="display: none;" id="class11">
-                    <h3 style="margin-top: 2rem;">Science And Math</h3>
-                    <div class="row">
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="math">Math</button>
-                            </form>
-
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="chemistry">Chemistry</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="biology">Biology</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="physics">Physics</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top: 2rem;">Language</h3>
-                    <div class="row">
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="english">English</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="hindi">Hindi</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top: 2rem;">Arts</h3>
-                    <div class="row">
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="geography">Geography</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="political_science">Politics</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="history">History</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="economics">Economics</button>
-                            </form>
-                        </div>
-                    </div>
-                    <h3 style="margin-top: 2rem;">Commerse</h3>
-                    <div class="row">
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="statistics">Statistics</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="business">Business</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                            <form action="/class11" method="POST">
-                                <button type="submit" class="mob_course btn btn-dark" name="subject" value="accounts">Accounts</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <br><br>
-
-                <!-- ....................the upper part in invisile................................. -->
-
-
-                <div class="row" style="padding-bottom: 500px;">
-                    <div class="col-6" style="height: 30%;margin-bottom: 10px;">
-                       <a href="/class12" >
-                            <button class="button primary large mob_class" type="submit">Class 12</button>
-                       </a>
-                    </div>
-                    <div class="col-6" style="height: 30%;margin-bottom: 10px;">
-                       <a href="/class11">
-                            <button class="button primary large mob_class" type="submit">Class 11</button>
-                       </a>
-                    </div>
-                    <div class="col-6" style="height: 30%;margin-top: 10px;">
-                        <a href="/class10" >
-                            <button class=" button primary large mob_class" type="submit">Class 10</button>
-                        </a>
-                    </div>
-                    <div class="col-6" style="height: 30%;margin-top: 10px;">
-                       <a href="/class9">
-                            <button class="button primary large mob_class" type="submit">Class 9</button>
-                       </a>
-                    </div>
-
-                </div>
-
-                <script>
-                </script>
-            </div>
-    </div>
-
-
-
-    <!--desktop html code starts here-->
-
-
-
-
-
-
-    <div id='content-desktop'>
-        <%- include('partials/bdheader') %>
-
-            <%- include('partials/fix_sidebar') %>
-
-                <div class="container" style="padding-top: 7rem;">
-                    <h1 style=" text-align: center;font-weight: 10;">Class 12</h1>
-                    <div style="border: groove;margin: 10px; " class="row">
-
-
-
-                        <!--Class 12-->
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/math">
-                                <button name="subject" value="math" type="submit" class="course btn btn-outline-danger waves-effect">Math</button>
-                            </a>
-
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/cbse/class12/chemistry">
-                                <button type="submit" class="course btn btn-outline-primary waves-effect" name="subject" value="chemistry">Chemistry</button>
-                            </a>
-                        
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/biology">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="biology">Biology</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/physics">
-                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="physics">Physics</button>
-
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/english">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="english">English</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/hindi">
-                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/geography">
-                                <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="geography">Geography</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/political_science">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/history">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="history">History</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/economics">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="economics">Economics</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/statistics">
-                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="statistics">Statistics</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/business">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="business">Business</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class12/accounts">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="accounts">Accounts</button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <br><br>
-                    <br><br>
-
-
+                <div class="container">
 
                     <!--Class 11-->
-                    <h1 style="text-align: center;c">Class 11</h1>
-                    <div style="border: groove;margin: 10px; " class="row">
 
 
+                    <div style="display: none;" id="class11">
+                        <h3 style="margin-top: 2rem;">Science And Math</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="math">Math</button>
+                                </form>
 
-                        <!--Class 12-->
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/math">
-                                <button name="subject" value="math" type="submit" class="course btn btn-outline-danger waves-effect">Math</button>
-                            </a>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="chemistry">Chemistry</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="biology">Biology</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="physics">Physics</button>
+                                </form>
+                            </div>
+                        </div>
 
+                        <h3 style="margin-top: 2rem;">Language</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="english">English</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="hindi">Hindi</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                           <a href="/cbse/class11/chemistry">
-                                <button type="submit" class="course btn btn-outline-primary waves-effect" name="subject" value="chemistry">Chemistry</button>
-                            </a>
-                        
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/biology">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="biology">Biology</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/physics">
-                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="physics">Physics</button>
 
-                            </a>
+                        <h3 style="margin-top: 2rem;">Arts</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="geography">Geography</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="political_science">Politics</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="history">History</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="economics">Economics</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/english">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="english">English</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/hindi">
-                                <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/geography">
-                                <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="geography">Geography</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/political_science">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/history">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="history">History</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/economics">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="economics">Economics</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/statistics">
-                                <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="statistics">Statistics</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/business">
-                                <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="business">Business</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="/cbse/class11/accounts">
-                                <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="accounts">Accounts</button>
-                            </a>
+                        <h3 style="margin-top: 2rem;">Commerse</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="statistics">Statistics</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="business">Business</button>
+                                </form>
+                            </div>
+                            <div class="col-4">
+                                <form action="/class11" method="POST">
+                                    <button type="submit" class="mob_course btn btn-dark" name="subject" value="accounts">Accounts</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-
                     <br><br>
-                    <div style="margin: 10px;" class="row">
-                        <div class="col-md-3">
-                            <a href="/class10">
-                                <button class="classes" type="submit">Class 10</button>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/class9">
-                                <button class="classes" type="submit">Class 9</button>
-                            </a>
-                        </div>
 
+                    <!-- ....................the upper part in invisile................................. -->
+
+
+                    <div class="row" style="padding-bottom: 500px;">
+
+                        <div class="col-6" style="height: 30%;margin-bottom: 10px;">
+                            <a href="/class12">
+                                <button class="button primary large mob_class" type="submit">Class 12</button>
+                            </a>
+                        </div>
+                        <div class="col-6" style="height: 30%;margin-bottom: 10px;">
+                            <a href="/class11">
+                                <button class="button primary large mob_class" type="submit">Class 11</button>
+                            </a>
+                        </div>
+                        <div class="col-6" style="height: 30%;margin-top: 10px;">
+                            <a href="/class10">
+                                <button class=" button primary large mob_class" type="submit">Class 10</button>
+                            </a>
+                        </div>
+                        <div class="col-6" style="height: 30%;margin-top: 10px;">
+                            <a href="/class9">
+                                <button class="button primary large mob_class" type="submit">Class 9</button>
+                            </a>
+                        </div>
 
                     </div>
+
+                    <script>
+                    </script>
                 </div>
+        </div>
+
+
+
+        <!--desktop html code starts here-->
+
+
+
+
+
+
+        <div id='content-desktop'>
+            <%- include('partials/bdheader') %>
+
+                <%- include('partials/fix_sidebar') %>
+
+                    <div class="container" style="padding-top: 7rem;">
+                        <h1 style=" text-align: center;font-weight: 10;">CBSE Class 12</h1>
+                        <div style="border: groove;margin: 10px; " class="row">
+
+
+
+                            <!--Class 12-->
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/math">
+                                    <button name="subject" value="math" type="submit" class="course btn btn-outline-danger waves-effect">Math</button>
+                                </a>
+
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/chemistry">
+                                    <button type="submit" class="course btn btn-outline-primary waves-effect" name="subject" value="chemistry">Chemistry</button>
+                                </a>
+
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/biology">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="biology">Biology</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/physics">
+                                    <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="physics">Physics</button>
+
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/english">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="english">English</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/hindi">
+                                    <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/geography">
+                                    <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="geography">Geography</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/political_science">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/history">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="history">History</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/economics">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="economics">Economics</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/statistics">
+                                    <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="statistics">Statistics</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/business">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="business">Business</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class12/accounts">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="accounts">Accounts</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <br><br>
+
+
+
+                        <!--Class 11-->
+                        <h1 style="text-align: center;c">CBSE Class 11</h1>
+                        <div style="border: groove;margin: 10px; " class="row">
+
+
+
+                            <!--Class 12-->
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/math">
+                                    <button name="subject" value="math" type="submit" class="course btn btn-outline-danger waves-effect">Math</button>
+                                </a>
+
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/chemistry">
+                                    <button type="submit" class="course btn btn-outline-primary waves-effect" name="subject" value="chemistry">Chemistry</button>
+                                </a>
+
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/biology">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="biology">Biology</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/physics">
+                                    <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="physics">Physics</button>
+
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/english">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="english">English</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/hindi">
+                                    <button type="submit" class="course btn btn-outline-warning waves-effect" name="subject" value="hindi">Hindi</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/geography">
+                                    <button type="submit" class="course btn btn-outline-danger waves-effect" name="subject" value="geography">Geography</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/political_science">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="political_science">Political Science</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/history">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="history">History</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/economics">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="economics">Economics</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/statistics">
+                                    <button type="submit" class="course btn btn-outline-success waves-effect" name="subject" value="statistics">Statistics</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/business">
+                                    <button type="submit" class="course btn btn-outline-secondary waves-effect" name="subject" value="business">Business</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/cbse/class11/accounts">
+                                    <button type="submit" class="course btn btn-outline-info waves-effect" name="subject" value="accounts">Accounts</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <div style="margin: 10px;" class="row">
+                            <div class="col-md-3">
+                                <a href="/class10">
+                                    <button class="classes" type="submit">Class 10</button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/class9">
+                                    <button class="classes" type="submit">Class 9</button>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
