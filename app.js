@@ -256,6 +256,17 @@ app.get('/robots.txt', function(req, res) {
 });
 
 
+app.use((req, res, next) => {
+    const send = res.send;
+    res.send = (data) => {
+        res.removeHeader('X-Powered-By');
+        return send.call(res, data);
+    };
+
+    next();
+});
+
+
 
 //my drive image uploads begin here
 
